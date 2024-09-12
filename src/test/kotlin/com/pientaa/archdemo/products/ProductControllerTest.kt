@@ -22,11 +22,11 @@ class ProductControllerTest(
 ) : StringSpec({
 
     val products: Map<UUID, ProductDTO> = listOf(
-        ProductDTO(UUID.fromString("e8b8f792-81d5-4df3-97cb-9dc3d3c3e4d8"), "Product 1", BigDecimal("19.99")),
-        ProductDTO(UUID.fromString("c5f8cdd8-0d5c-4e5d-998e-23c6a0d3486e"), "Product 2", BigDecimal("29.99")),
-        ProductDTO(UUID.fromString("a6d5e7be-6b3e-4f21-9a1e-39f6d3d4e6a1"), "Product 3", BigDecimal("15.50")),
-        ProductDTO(UUID.fromString("d4e5f7b2-91e8-4c62-b6ae-14f5d3c3e8b3"), "Product 4", BigDecimal("49.99")),
-        ProductDTO(UUID.fromString("a0f1c8b4-8421-4c47-a550-5e9c2c6b0e8f"), "Product 5", BigDecimal("12.99"))
+        ProductDTO(UUID.randomUUID(), "Product 1", BigDecimal("19.99")),
+        ProductDTO(UUID.randomUUID(), "Product 2", BigDecimal("29.99")),
+        ProductDTO(UUID.randomUUID(), "Product 3", BigDecimal("15.50")),
+        ProductDTO(UUID.randomUUID(), "Product 4", BigDecimal("49.99")),
+        ProductDTO(UUID.randomUUID(), "Product 5", BigDecimal("12.99"))
     )
         .associateBy { it.id }
 

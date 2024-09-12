@@ -7,7 +7,7 @@ import java.math.BigDecimal
 import java.util.UUID
 
 @Entity
-data class Product(
+class Product(
     @Id
     val id: UUID,
 

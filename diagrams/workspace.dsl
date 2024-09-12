@@ -8,12 +8,9 @@ workspace {
             service = container "ProductService" "Business logic for products" "Spring Service"
             repository = container "ProductRepository" "Handles data persistence" "JPA Repository"
 
-            database = container "Database" "Stores product data" "Relational Database"
-
             user -> webapp "Uses"
             webapp -> service "Handles"
             service -> repository "Calls"
-            repository -> database "Reads/Writes"
         }
     }
 

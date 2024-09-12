@@ -4,7 +4,7 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-ui",
-  "lastModifiedDate" : "2024-09-12T20:02:45Z",
+  "lastModifiedDate" : "2024-09-19T16:41:00Z",
   "model" : {
     "people" : [ {
       "description" : "A user of the shopping platform",
@@ -17,17 +17,17 @@
       "relationships" : [ {
         "description" : "Uses",
         "destinationId" : "3",
-        "id" : "7",
+        "id" : "6",
         "properties" : {
-          "structurizr.dsl.identifier" : "e5a753d0-0ba9-44d8-ada6-a90f67d11675"
+          "structurizr.dsl.identifier" : "1572e815-a304-450f-b34d-b16898eff9fb"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "Uses",
         "destinationId" : "2",
-        "id" : "8",
-        "linkedRelationshipId" : "7",
+        "id" : "7",
+        "linkedRelationshipId" : "6",
         "sourceId" : "1"
       } ],
       "tags" : "Element,Person"
@@ -44,9 +44,9 @@
         "relationships" : [ {
           "description" : "Handles",
           "destinationId" : "4",
-          "id" : "9",
+          "id" : "8",
           "properties" : {
-            "structurizr.dsl.identifier" : "fc3c81e5-7d7e-4cfb-a073-94c15c867c53"
+            "structurizr.dsl.identifier" : "5c097b4e-aa54-4e2b-94f0-95a90b0b71af"
           },
           "sourceId" : "3",
           "tags" : "Relationship"
@@ -64,9 +64,9 @@
         "relationships" : [ {
           "description" : "Calls",
           "destinationId" : "5",
-          "id" : "10",
+          "id" : "9",
           "properties" : {
-            "structurizr.dsl.identifier" : "80f50f05-0115-42fc-9c3f-4e9490c43f23"
+            "structurizr.dsl.identifier" : "b6c86ba4-ae11-409c-b386-5ff05b3a61cf"
           },
           "sourceId" : "4",
           "tags" : "Relationship"
@@ -81,28 +81,8 @@
         "properties" : {
           "structurizr.dsl.identifier" : "repository"
         },
-        "relationships" : [ {
-          "description" : "Reads/Writes",
-          "destinationId" : "6",
-          "id" : "11",
-          "properties" : {
-            "structurizr.dsl.identifier" : "242450c9-da7d-4dd2-a266-a15af2e3b5d8"
-          },
-          "sourceId" : "5",
-          "tags" : "Relationship"
-        } ],
         "tags" : "Element,Container",
         "technology" : "JPA Repository"
-      }, {
-        "description" : "Stores product data",
-        "documentation" : { },
-        "id" : "6",
-        "name" : "Database",
-        "properties" : {
-          "structurizr.dsl.identifier" : "database"
-        },
-        "tags" : "Element,Container",
-        "technology" : "Relational Database"
       } ],
       "description" : "Manages product listings",
       "documentation" : { },
@@ -117,7 +97,7 @@
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiB0aGUgc2hvcHBpbmcgcGxhdGZvcm0iCgogICAgICAgIGltcyA9IHNvZnR3YXJlU3lzdGVtICJQcm9kdWN0IExpc3RpbmdzIiAiTWFuYWdlcyBwcm9kdWN0IGxpc3RpbmdzIiB7CiAgICAgICAgICAgIHdlYmFwcCA9IGNvbnRhaW5lciAiUHJvZHVjdENvbnRyb2xsZXIiICJIYW5kbGVzIEhUVFAgcmVxdWVzdHMiICJTcHJpbmcgTVZDIgogICAgICAgICAgICBzZXJ2aWNlID0gY29udGFpbmVyICJQcm9kdWN0U2VydmljZSIgIkJ1c2luZXNzIGxvZ2ljIGZvciBwcm9kdWN0cyIgIlNwcmluZyBTZXJ2aWNlIgogICAgICAgICAgICByZXBvc2l0b3J5ID0gY29udGFpbmVyICJQcm9kdWN0UmVwb3NpdG9yeSIgIkhhbmRsZXMgZGF0YSBwZXJzaXN0ZW5jZSIgIkpQQSBSZXBvc2l0b3J5IgoKICAgICAgICAgICAgZGF0YWJhc2UgPSBjb250YWluZXIgIkRhdGFiYXNlIiAiU3RvcmVzIHByb2R1Y3QgZGF0YSIgIlJlbGF0aW9uYWwgRGF0YWJhc2UiCgogICAgICAgICAgICB1c2VyIC0+IHdlYmFwcCAiVXNlcyIKICAgICAgICAgICAgd2ViYXBwIC0+IHNlcnZpY2UgIkhhbmRsZXMiCiAgICAgICAgICAgIHNlcnZpY2UgLT4gcmVwb3NpdG9yeSAiQ2FsbHMiCiAgICAgICAgICAgIHJlcG9zaXRvcnkgLT4gZGF0YWJhc2UgIlJlYWRzL1dyaXRlcyIKICAgICAgICB9CiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgaW1zIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgaW1zIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzExNjhiZCIKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzA4NDI3YiIKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIgogICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiRGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgIHNoYXBlIGN5bGluZGVyCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0K"
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiB0aGUgc2hvcHBpbmcgcGxhdGZvcm0iCgogICAgICAgIGltcyA9IHNvZnR3YXJlU3lzdGVtICJQcm9kdWN0IExpc3RpbmdzIiAiTWFuYWdlcyBwcm9kdWN0IGxpc3RpbmdzIiB7CiAgICAgICAgICAgIHdlYmFwcCA9IGNvbnRhaW5lciAiUHJvZHVjdENvbnRyb2xsZXIiICJIYW5kbGVzIEhUVFAgcmVxdWVzdHMiICJTcHJpbmcgTVZDIgogICAgICAgICAgICBzZXJ2aWNlID0gY29udGFpbmVyICJQcm9kdWN0U2VydmljZSIgIkJ1c2luZXNzIGxvZ2ljIGZvciBwcm9kdWN0cyIgIlNwcmluZyBTZXJ2aWNlIgogICAgICAgICAgICByZXBvc2l0b3J5ID0gY29udGFpbmVyICJQcm9kdWN0UmVwb3NpdG9yeSIgIkhhbmRsZXMgZGF0YSBwZXJzaXN0ZW5jZSIgIkpQQSBSZXBvc2l0b3J5IgoKICAgICAgICAgICAgdXNlciAtPiB3ZWJhcHAgIlVzZXMiCiAgICAgICAgICAgIHdlYmFwcCAtPiBzZXJ2aWNlICJIYW5kbGVzIgogICAgICAgICAgICBzZXJ2aWNlIC0+IHJlcG9zaXRvcnkgIkNhbGxzIgogICAgICAgIH0KICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBpbXMgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b2xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIGltcyB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IGxyCiAgICAgICAgfQoKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzExNjhiZCIKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzA4NDI3YiIKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIgogICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiRGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgIHNoYXBlIGN5bGluZGVyCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0K"
   },
   "views" : {
     "configuration" : {
@@ -143,47 +123,59 @@
       "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
     },
     "containerViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
       "dimensions" : {
-        "height" : 2391,
-        "width" : 895
+        "height" : 841,
+        "width" : 3070
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 255,
-        "y" : 199
+        "x" : 199,
+        "y" : 200
       }, {
         "id" : "3",
-        "x" : 225,
-        "y" : 679
+        "x" : 899,
+        "y" : 250
       }, {
         "id" : "4",
-        "x" : 220,
-        "y" : 1049
+        "x" : 1649,
+        "y" : 250
       }, {
         "id" : "5",
-        "x" : 225,
-        "y" : 1424
-      }, {
-        "id" : "6",
-        "x" : 225,
-        "y" : 1799
+        "x" : 2399,
+        "y" : 250
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "generatedKey" : true,
       "key" : "Container-001",
       "order" : 2,
       "relationships" : [ {
-        "id" : "10"
+        "id" : "6"
       }, {
-        "id" : "11"
-      }, {
-        "id" : "7"
+        "id" : "8"
       }, {
         "id" : "9"
       } ],
       "softwareSystemId" : "2"
     } ],
     "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
       "elements" : [ {
         "id" : "1",
         "x" : 0,
@@ -198,7 +190,7 @@
       "key" : "SystemContext-001",
       "order" : 1,
       "relationships" : [ {
-        "id" : "8"
+        "id" : "7"
       } ],
       "softwareSystemId" : "2"
     } ]
