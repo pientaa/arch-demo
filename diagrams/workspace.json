@@ -1,0 +1,206 @@
+{
+  "configuration" : { },
+  "description" : "Description",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2024-09-12T20:02:45Z",
+  "model" : {
+    "people" : [ {
+      "description" : "A user of the shopping platform",
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "user"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "3",
+        "id" : "7",
+        "properties" : {
+          "structurizr.dsl.identifier" : "e5a753d0-0ba9-44d8-ada6-a90f67d11675"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "2",
+        "id" : "8",
+        "linkedRelationshipId" : "7",
+        "sourceId" : "1"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "description" : "Handles HTTP requests",
+        "documentation" : { },
+        "id" : "3",
+        "name" : "ProductController",
+        "properties" : {
+          "structurizr.dsl.identifier" : "webapp"
+        },
+        "relationships" : [ {
+          "description" : "Handles",
+          "destinationId" : "4",
+          "id" : "9",
+          "properties" : {
+            "structurizr.dsl.identifier" : "fc3c81e5-7d7e-4cfb-a073-94c15c867c53"
+          },
+          "sourceId" : "3",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Spring MVC"
+      }, {
+        "description" : "Business logic for products",
+        "documentation" : { },
+        "id" : "4",
+        "name" : "ProductService",
+        "properties" : {
+          "structurizr.dsl.identifier" : "service"
+        },
+        "relationships" : [ {
+          "description" : "Calls",
+          "destinationId" : "5",
+          "id" : "10",
+          "properties" : {
+            "structurizr.dsl.identifier" : "80f50f05-0115-42fc-9c3f-4e9490c43f23"
+          },
+          "sourceId" : "4",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Spring Service"
+      }, {
+        "description" : "Handles data persistence",
+        "documentation" : { },
+        "id" : "5",
+        "name" : "ProductRepository",
+        "properties" : {
+          "structurizr.dsl.identifier" : "repository"
+        },
+        "relationships" : [ {
+          "description" : "Reads/Writes",
+          "destinationId" : "6",
+          "id" : "11",
+          "properties" : {
+            "structurizr.dsl.identifier" : "242450c9-da7d-4dd2-a266-a15af2e3b5d8"
+          },
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "JPA Repository"
+      }, {
+        "description" : "Stores product data",
+        "documentation" : { },
+        "id" : "6",
+        "name" : "Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "database"
+        },
+        "tags" : "Element,Container",
+        "technology" : "Relational Database"
+      } ],
+      "description" : "Manages product listings",
+      "documentation" : { },
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "Product Listings",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ims"
+      },
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "Name",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiB0aGUgc2hvcHBpbmcgcGxhdGZvcm0iCgogICAgICAgIGltcyA9IHNvZnR3YXJlU3lzdGVtICJQcm9kdWN0IExpc3RpbmdzIiAiTWFuYWdlcyBwcm9kdWN0IGxpc3RpbmdzIiB7CiAgICAgICAgICAgIHdlYmFwcCA9IGNvbnRhaW5lciAiUHJvZHVjdENvbnRyb2xsZXIiICJIYW5kbGVzIEhUVFAgcmVxdWVzdHMiICJTcHJpbmcgTVZDIgogICAgICAgICAgICBzZXJ2aWNlID0gY29udGFpbmVyICJQcm9kdWN0U2VydmljZSIgIkJ1c2luZXNzIGxvZ2ljIGZvciBwcm9kdWN0cyIgIlNwcmluZyBTZXJ2aWNlIgogICAgICAgICAgICByZXBvc2l0b3J5ID0gY29udGFpbmVyICJQcm9kdWN0UmVwb3NpdG9yeSIgIkhhbmRsZXMgZGF0YSBwZXJzaXN0ZW5jZSIgIkpQQSBSZXBvc2l0b3J5IgoKICAgICAgICAgICAgZGF0YWJhc2UgPSBjb250YWluZXIgIkRhdGFiYXNlIiAiU3RvcmVzIHByb2R1Y3QgZGF0YSIgIlJlbGF0aW9uYWwgRGF0YWJhc2UiCgogICAgICAgICAgICB1c2VyIC0+IHdlYmFwcCAiVXNlcyIKICAgICAgICAgICAgd2ViYXBwIC0+IHNlcnZpY2UgIkhhbmRsZXMiCiAgICAgICAgICAgIHNlcnZpY2UgLT4gcmVwb3NpdG9yeSAiQ2FsbHMiCiAgICAgICAgICAgIHJlcG9zaXRvcnkgLT4gZGF0YWJhc2UgIlJlYWRzL1dyaXRlcyIKICAgICAgICB9CiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgaW1zIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgaW1zIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzExNjhiZCIKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzA4NDI3YiIKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIgogICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiRGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgIHNoYXBlIGN5bGluZGVyCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0K"
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "Container-001",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#1168bd",
+          "color" : "#ffffff",
+          "tag" : "Container"
+        }, {
+          "background" : "#08427b",
+          "color" : "#ffffff",
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+    },
+    "containerViews" : [ {
+      "dimensions" : {
+        "height" : 2391,
+        "width" : 895
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 255,
+        "y" : 199
+      }, {
+        "id" : "3",
+        "x" : 225,
+        "y" : 679
+      }, {
+        "id" : "4",
+        "x" : 220,
+        "y" : 1049
+      }, {
+        "id" : "5",
+        "x" : 225,
+        "y" : 1424
+      }, {
+        "id" : "6",
+        "x" : 225,
+        "y" : 1799
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Container-001",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "10"
+      }, {
+        "id" : "11"
+      }, {
+        "id" : "7"
+      }, {
+        "id" : "9"
+      } ],
+      "softwareSystemId" : "2"
+    } ],
+    "systemContextViews" : [ {
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "generatedKey" : true,
+      "key" : "SystemContext-001",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "8"
+      } ],
+      "softwareSystemId" : "2"
+    } ]
+  }
+}

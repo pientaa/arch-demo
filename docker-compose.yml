@@ -1,0 +1,10 @@
+services:
+  arch-demo-db:
+    container_name: arch-demo-db
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: arch-demo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
