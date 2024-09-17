@@ -3,14 +3,22 @@ workspace {
     model {
         user = person "User" "A user of the shopping platform"
 
-        ims = softwareSystem "Product Listings" "Manages product listings" {
-            webapp = container "ProductController" "Handles HTTP requests" "Spring MVC"
-            service = container "ProductService" "Business logic for products" "Spring Service"
-            repository = container "ProductRepository" "Handles data persistence" "JPA Repository"
+        ims = softwareSystem "Product Listings" "Manages product listings and discounts" {
+            productWebapp = container "ProductController" "Handles HTTP requests for products" "Spring MVC"
 
-            user -> webapp "Uses"
-            webapp -> service "Handles"
-            service -> repository "Calls"
+            productService = container "ProductService" "Business logic for products" "Spring Service"
+            discountService = container "DiscountService" "Business logic for discounts" "Spring Service"
+
+            productRepository = container "ProductRepository" "Handles product data persistence" "JPA Repository"
+
+            user -> productWebapp "Uses"
+
+            productWebapp -> productService "Handles product requests"
+            productWebapp -> discountService "Handles discount requests"
+
+            productService -> productRepository "Uses"
+
+            discountService -> productRepository "Uses"
         }
     }
 

@@ -1,9 +1,9 @@
 package com.pientaa.archdemo
 
+import com.pientaa.archdemo.config.IntegrationTest
 import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
 
-@SpringBootTest
+@IntegrationTest
 class ArchDemoApplicationTests {
 
     @Test
