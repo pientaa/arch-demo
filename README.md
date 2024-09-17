@@ -34,3 +34,33 @@ system to a more flexible, maintainable architecture:
     - **Acceptance Criteria**:
         - The user makes a request to retrieve all products.
         - The system returns a list of all products with their name, price, and ID.
+
+## Step 2: Apply Discounts to Products Based on Specific Rules
+
+### Business Requirement 2: Apply Discounts to Products Based on Specific Rules
+
+- **Description**: The system should support different types of discounts that can be applied to products based on
+  specific business rules. Each discount type will have its own method of calculation and criteria for application.
+
+- **Types of Discounts**:
+    - **Buy N for the Price of 1**: Allows customers to buy multiple units of the same product for the price of one.
+    - **Count-Based Percentage Discount**: A percentage discount is applied when a customer buys a certain number of a
+      specific product (e.g., 10% off for buying 3 or more of a product).
+
+### Functional Requirements
+
+1. **Apply "Buy N for the Price of 1" Discount**:
+    - **Description**: When a product qualifies for the "buy N for the price of 1" discount, a customer can purchase
+      multiple units of the product for the price of a single unit.
+    - **Acceptance Criteria**:
+        - The system identifies products eligible for this discount.
+        - The final price is calculated based on the number of items purchased and the applicable discount.
+        - The system stores the original price of products and discounts.
+
+2. **Apply Count-Based Percentage Discount**:
+    - **Description**: When a customer purchases a certain quantity of a product, a percentage discount is applied to
+      the price.
+    - **Acceptance Criteria**:
+        - The system checks the quantity of the product and applies a percentage discount if the purchase
+          meets the threshold.
+        - The percentage discount is stored along with the original price.
