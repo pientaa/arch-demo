@@ -23,7 +23,7 @@ data class BuyNForPriceOfOneDiscount(
     override fun calculatePrice(quantity: Int, price: BigDecimal): BigDecimal {
         val fullPriceUnits = quantity / n
         val remainderUnits = quantity % n
-        return price.multiply(BigDecimal(fullPriceUnits + remainderUnits))
+        return price.multiply(BigDecimal(fullPriceUnits + remainderUnits)).divide(BigDecimal(quantity))
     }
 }
 
@@ -37,12 +37,11 @@ data class CountBasedPercentageDiscount(
     description = "${percentage.setScale(2)}% off when buying $minQuantity or more"
 ) {
     override fun calculatePrice(quantity: Int, price: BigDecimal): BigDecimal {
-        val basePrice = price.multiply(BigDecimal(quantity))
         return if (quantity >= minQuantity) {
-            val discountAmount = basePrice.multiply(percentage).divide(BigDecimal(100))
-            basePrice.subtract(discountAmount)
+            val discountAmount = price.multiply(percentage).divide(BigDecimal(100))
+            price.subtract(discountAmount)
         } else {
-            basePrice
+            price
         }
     }
 }
