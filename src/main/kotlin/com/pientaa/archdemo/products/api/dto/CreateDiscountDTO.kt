@@ -1,11 +1,12 @@
 package com.pientaa.archdemo.products.api.dto
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import com.pientaa.archdemo.products.model.BuyNForPriceOfOneDiscount
-import com.pientaa.archdemo.products.model.CountBasedPercentageDiscount
-import com.pientaa.archdemo.products.model.Discount
-import com.pientaa.archdemo.products.model.DiscountType
+import com.pientaa.archdemo.products.domain.model.BuyNForPriceOfOneDiscount
+import com.pientaa.archdemo.products.domain.model.CountBasedPercentageDiscount
+import com.pientaa.archdemo.products.domain.model.Discount
+import com.pientaa.archdemo.products.domain.model.DiscountType
 import java.math.BigDecimal
+import java.util.UUID
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class CreateDiscountDTO(
@@ -31,13 +32,17 @@ data class CreateDiscountDTO(
         }
     }
 
-    fun toDiscount(): Discount = when (type) {
+    fun toDiscount(productId: UUID): Discount = when (type) {
         DiscountType.BUY_N_FOR_PRICE_OF_ONE -> {
-            BuyNForPriceOfOneDiscount(n = n!!)
+            BuyNForPriceOfOneDiscount(
+                productId = productId,
+                n = n!!
+            )
         }
 
         DiscountType.COUNT_BASED_PERCENTAGE -> {
             CountBasedPercentageDiscount(
+                productId = productId,
                 minQuantity = minQuantity!!,
                 percentage = percentage!!
             )

@@ -1,7 +1,7 @@
 package com.pientaa.archdemo.products.api.dto
 
-import com.pientaa.archdemo.products.model.Discount
-import com.pientaa.archdemo.products.model.DiscountType
+import com.pientaa.archdemo.products.domain.model.Discount
+import com.pientaa.archdemo.products.domain.model.DiscountType
 import java.util.UUID
 
 data class DiscountDTO(
@@ -10,9 +10,9 @@ data class DiscountDTO(
     val description: String,
 ) {
     companion object {
-        fun fromDiscount(productId: UUID, discount: Discount): DiscountDTO {
+        fun fromDiscount(discount: Discount): DiscountDTO {
             return DiscountDTO(
-                productId = productId,
+                productId = discount.productId,
                 discountType = discount.discountType,
                 description = discount.description
             )

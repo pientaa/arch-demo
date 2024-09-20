@@ -1,6 +1,6 @@
 package com.pientaa.archdemo.products.api.dto
 
-import com.pientaa.archdemo.products.model.Product
+import com.pientaa.archdemo.products.domain.model.Product
 import java.math.BigDecimal
 import java.util.UUID
 
@@ -29,7 +29,7 @@ data class ProductResponseDTO(
                 id = product.id,
                 name = product.name,
                 price = product.price,
-                discounts = product.discounts.map { DiscountDTO.fromDiscount(product.id, it) }
+                discounts = product.discounts.map { DiscountDTO.fromDiscount(it) }
             )
         }
     }

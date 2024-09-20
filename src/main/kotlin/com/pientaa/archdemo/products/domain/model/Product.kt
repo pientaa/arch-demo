@@ -1,4 +1,4 @@
-package com.pientaa.archdemo.products.model
+package com.pientaa.archdemo.products.domain.model
 
 import java.math.BigDecimal
 import java.util.UUID
@@ -12,4 +12,9 @@ data class Product(
     fun addDiscount(discount: Discount) {
         discounts.add(discount)
     }
+
+    fun calculatePrice(quantity: Quantity): BigDecimal =
+        discounts.fold(price) { acc: BigDecimal, discount: Discount ->
+            discount.calculatePrice(quantity.value, acc)
+        }
 }
