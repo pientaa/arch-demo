@@ -3,10 +3,8 @@ package com.pientaa.archdemo.products.domain
 import com.pientaa.archdemo.products.domain.model.PricingInfo
 import com.pientaa.archdemo.products.domain.model.Product
 import com.pientaa.archdemo.products.domain.model.Quantity
-import org.springframework.stereotype.Service
 import java.math.BigDecimal
 
-@Service
 class PricingService {
     fun calculatePrice(products: Map<Product, Quantity>): List<PricingInfo> =
         products.map { (product, quantity) ->

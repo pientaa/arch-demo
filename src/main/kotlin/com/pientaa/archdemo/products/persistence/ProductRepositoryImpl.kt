@@ -11,18 +11,24 @@ import com.pientaa.archdemo.products.persistence.entity.ProductEntity
 import com.pientaa.archdemo.products.persistence.repository.JpaProductRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Component
+import org.springframework.transaction.annotation.Transactional
 import java.util.UUID
 
 @Component
 class ProductRepositoryImpl(
     private val jpaProductRepository: JpaProductRepository,
 ) : ProductRepository {
+
+    @Transactional
     override fun save(product: Product): Product = jpaProductRepository.save(product.toEntity()).toModel()
 
+    @Transactional(readOnly = true)
     override fun findAll(): List<Product> = jpaProductRepository.findAll().map { it.toModel() }
 
+    @Transactional(readOnly = true)
     override fun findById(productId: UUID): Product? = jpaProductRepository.findByIdOrNull(productId)?.toModel()
 
+    @Transactional(readOnly = true)
     override fun findAllByIds(ids: List<UUID>): List<Product> =
         jpaProductRepository.findAllById(ids).map { it.toModel() }
 }

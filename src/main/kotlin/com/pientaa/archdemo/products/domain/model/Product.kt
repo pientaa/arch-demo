@@ -16,5 +16,5 @@ data class Product(
     fun calculatePrice(quantity: Quantity): BigDecimal =
         discounts.fold(price) { acc: BigDecimal, discount: Discount ->
             discount.calculatePrice(quantity.value, acc)
-        }
+        }.multiply(BigDecimal(quantity.value))
 }
