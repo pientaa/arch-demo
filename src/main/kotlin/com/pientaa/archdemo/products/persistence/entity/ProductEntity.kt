@@ -1,6 +1,5 @@
-package com.pientaa.archdemo.products.model.product
+package com.pientaa.archdemo.products.persistence.entity
 
-import com.pientaa.archdemo.products.model.discount.Discount
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
@@ -9,7 +8,7 @@ import java.math.BigDecimal
 import java.util.UUID
 
 @Entity
-class Product(
+class ProductEntity(
     @Id
     val id: UUID,
 
@@ -17,6 +16,6 @@ class Product(
 
     val price: BigDecimal,
 
-    @OneToMany(mappedBy = "product", cascade = [CascadeType.ALL])
-    val discounts: MutableList<Discount> = mutableListOf()
+    @OneToMany(mappedBy = "product", cascade = [CascadeType.ALL], orphanRemoval = true)
+    val discounts: MutableList<DiscountEntity> = mutableListOf()
 )
