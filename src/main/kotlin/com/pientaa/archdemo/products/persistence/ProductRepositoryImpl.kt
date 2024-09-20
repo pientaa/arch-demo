@@ -1,14 +1,14 @@
-package com.pientaa.archdemo.products.adapter
+package com.pientaa.archdemo.products.persistence
 
-import com.pientaa.archdemo.products.model.BuyNForPriceOfOneDiscount
-import com.pientaa.archdemo.products.model.CountBasedPercentageDiscount
-import com.pientaa.archdemo.products.model.Discount
-import com.pientaa.archdemo.products.model.DiscountType
-import com.pientaa.archdemo.products.model.Product
-import com.pientaa.archdemo.products.port.ProductRepository
-import com.pientaa.archdemo.products.persistence.repository.JpaProductRepository
+import com.pientaa.archdemo.products.domain.model.BuyNForPriceOfOneDiscount
+import com.pientaa.archdemo.products.domain.model.CountBasedPercentageDiscount
+import com.pientaa.archdemo.products.domain.model.Discount
+import com.pientaa.archdemo.products.domain.model.DiscountType
+import com.pientaa.archdemo.products.domain.model.Product
+import com.pientaa.archdemo.products.domain.port.ProductRepository
 import com.pientaa.archdemo.products.persistence.entity.DiscountEntity
 import com.pientaa.archdemo.products.persistence.entity.ProductEntity
+import com.pientaa.archdemo.products.persistence.repository.JpaProductRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Component
 import java.util.UUID
@@ -35,8 +35,15 @@ private fun ProductEntity.toModel(): Product = Product(
 )
 
 private fun DiscountEntity.toModel(): Discount = when (this.discountType) {
-    DiscountType.BUY_N_FOR_PRICE_OF_ONE -> BuyNForPriceOfOneDiscount(n = n!!)
+    DiscountType.BUY_N_FOR_PRICE_OF_ONE -> BuyNForPriceOfOneDiscount(
+        id = id,
+        productId = product.id,
+        n = n!!
+    )
+
     DiscountType.COUNT_BASED_PERCENTAGE -> CountBasedPercentageDiscount(
+        id = id,
+        productId = product.id,
         minQuantity = minQuantity!!,
         percentage = percentage!!
     )

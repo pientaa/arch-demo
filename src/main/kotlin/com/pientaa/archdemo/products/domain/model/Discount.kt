@@ -1,4 +1,4 @@
-package com.pientaa.archdemo.products.model
+package com.pientaa.archdemo.products.domain.model
 
 import java.math.BigDecimal
 import java.util.UUID
@@ -8,10 +8,12 @@ abstract class Discount(
     val description: String,
 ) {
     abstract val id: UUID
+    abstract val productId: UUID
     abstract fun calculatePrice(quantity: Int, price: BigDecimal): BigDecimal
 }
 
 data class BuyNForPriceOfOneDiscount(
+    override val productId: UUID,
     override val id: UUID = UUID.randomUUID(),
     val n: Int
 ) : Discount(
@@ -26,6 +28,7 @@ data class BuyNForPriceOfOneDiscount(
 }
 
 data class CountBasedPercentageDiscount(
+    override val productId: UUID,
     override val id: UUID = UUID.randomUUID(),
     val minQuantity: Int,
     val percentage: BigDecimal

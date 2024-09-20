@@ -1,6 +1,6 @@
 package com.pientaa.archdemo.products.persistence.entity
 
-import com.pientaa.archdemo.products.model.DiscountType
+import com.pientaa.archdemo.products.domain.model.DiscountType
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType
 import jakarta.persistence.Enumerated

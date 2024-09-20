@@ -4,12 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.pientaa.archdemo.config.IntegrationTest
 import com.pientaa.archdemo.products.api.dto.AddProductDTO
-import com.pientaa.archdemo.products.api.dto.CalculatePriceRequestDTO
-import com.pientaa.archdemo.products.api.dto.CalculatePriceResponseDTO
 import com.pientaa.archdemo.products.api.dto.CreateDiscountDTO
 import com.pientaa.archdemo.products.api.dto.DiscountDTO
 import com.pientaa.archdemo.products.api.dto.ProductResponseDTO
-import com.pientaa.archdemo.products.model.DiscountType
+import com.pientaa.archdemo.products.application.dto.CalculatePriceQuery
+import com.pientaa.archdemo.products.application.dto.CalculatePriceResponseDTO
+import com.pientaa.archdemo.products.domain.model.DiscountType
 import io.kotest.assertions.assertSoftly
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.inspectors.forAll
@@ -124,10 +124,10 @@ class ProductControllerTest(
 
     "POST /products/calculate-price - Calculate price for a list of products" {
         // Prepare the request payload
-        val calculatePriceRequest = CalculatePriceRequestDTO(
+        val calculatePriceRequest = CalculatePriceQuery(
             products = listOf(
-                CalculatePriceRequestDTO.ProductQuantityDTO(productId = products.keys.elementAt(0), quantity = 3),
-                CalculatePriceRequestDTO.ProductQuantityDTO(productId = products.keys.elementAt(1), quantity = 5),
+                CalculatePriceQuery.ProductQuantityDTO(productId = products.keys.elementAt(0), quantity = 3),
+                CalculatePriceQuery.ProductQuantityDTO(productId = products.keys.elementAt(1), quantity = 5),
             )
         )
 

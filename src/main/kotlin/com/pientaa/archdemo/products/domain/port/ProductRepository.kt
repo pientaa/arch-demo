@@ -1,6 +1,6 @@
-package com.pientaa.archdemo.products.port
+package com.pientaa.archdemo.products.domain.port
 
-import com.pientaa.archdemo.products.model.Product
+import com.pientaa.archdemo.products.domain.model.Product
 import java.util.UUID
 
 interface ProductRepository {
