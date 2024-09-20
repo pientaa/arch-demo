@@ -9,7 +9,7 @@ import com.pientaa.archdemo.products.api.dto.CalculatePriceResponseDTO
 import com.pientaa.archdemo.products.api.dto.CreateDiscountDTO
 import com.pientaa.archdemo.products.api.dto.DiscountDTO
 import com.pientaa.archdemo.products.api.dto.ProductResponseDTO
-import com.pientaa.archdemo.products.model.discount.DiscountType
+import com.pientaa.archdemo.products.model.DiscountType
 import io.kotest.assertions.assertSoftly
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.inspectors.forAll

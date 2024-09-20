@@ -1,4 +1,4 @@
-package com.pientaa.archdemo.products.model.discount
+package com.pientaa.archdemo.products.model
 
 enum class DiscountType {
     BUY_N_FOR_PRICE_OF_ONE,

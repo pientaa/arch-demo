@@ -2,8 +2,8 @@ package com.pientaa.archdemo.products.service
 
 import com.pientaa.archdemo.products.api.dto.AddProductDTO
 import com.pientaa.archdemo.products.api.dto.ProductResponseDTO
-import com.pientaa.archdemo.products.model.product.Product
-import com.pientaa.archdemo.products.repository.ProductRepository
+import com.pientaa.archdemo.products.model.Product
+import com.pientaa.archdemo.products.port.ProductRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -21,8 +21,3 @@ class ProductService(private val productRepository: ProductRepository) {
         .map { ProductResponseDTO.fromProduct(it) }
 }
 
-private fun AddProductDTO.toProduct() = Product(
-    id = id,
-    name = name,
-    price = price,
-)
