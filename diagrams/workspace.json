@@ -4,7 +4,7 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-ui",
-  "lastModifiedDate" : "2024-09-23T06:19:38Z",
+  "lastModifiedDate" : "2024-09-24T20:18:42Z",
   "model" : {
     "people" : [ {
       "description" : "A user of the shopping platform",
@@ -16,73 +16,57 @@
       },
       "relationships" : [ {
         "description" : "Uses",
-        "destinationId" : "4",
+        "destinationId" : "3",
         "id" : "11",
         "properties" : {
-          "structurizr.dsl.identifier" : "e84326da-6ed7-41e1-8a86-326e012c0871"
+          "structurizr.dsl.identifier" : "357e1dbb-0d1e-4d2d-ae4b-ec65014457d4"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "Uses",
-        "destinationId" : "3",
+        "destinationId" : "2",
         "id" : "12",
         "linkedRelationshipId" : "11",
         "sourceId" : "1"
       } ],
       "tags" : "Element,Person"
-    }, {
-      "description" : "An administrator managing discount campaigns",
-      "id" : "2",
-      "location" : "Unspecified",
-      "name" : "Admin",
-      "properties" : {
-        "structurizr.dsl.identifier" : "admin"
-      },
-      "relationships" : [ {
-        "description" : "Manages discounts",
-        "destinationId" : "21",
-        "id" : "26",
-        "properties" : {
-          "structurizr.dsl.identifier" : "50209e77-57be-4e30-8689-35f2279ba578"
-        },
-        "sourceId" : "2",
-        "tags" : "Relationship"
-      }, {
-        "description" : "Manages discounts",
-        "destinationId" : "20",
-        "id" : "27",
-        "linkedRelationshipId" : "26",
-        "sourceId" : "2"
-      } ],
-      "tags" : "Element,Person"
     } ],
     "softwareSystems" : [ {
       "containers" : [ {
-        "description" : "Handles HTTP requests for products",
+        "description" : "Handles HTTP requests for products and discounts",
         "documentation" : { },
-        "id" : "4",
+        "id" : "3",
         "name" : "ProductController",
         "properties" : {
           "structurizr.dsl.identifier" : "productwebapp"
         },
         "relationships" : [ {
           "description" : "Delegates product operations",
-          "destinationId" : "5",
+          "destinationId" : "4",
           "id" : "13",
           "properties" : {
-            "structurizr.dsl.identifier" : "943e9864-92bf-4e03-be8b-4d29d3bfce41"
+            "structurizr.dsl.identifier" : "ccc80b2d-b908-4ae1-8425-f96911fdaa61"
           },
-          "sourceId" : "4",
+          "sourceId" : "3",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Delegates discount operations",
+          "destinationId" : "5",
+          "id" : "14",
+          "properties" : {
+            "structurizr.dsl.identifier" : "3553e304-7429-478d-a7e7-45fc5dfddafb"
+          },
+          "sourceId" : "3",
           "tags" : "Relationship"
         }, {
           "description" : "Delegates price calculation requests",
           "destinationId" : "6",
-          "id" : "14",
+          "id" : "15",
           "properties" : {
-            "structurizr.dsl.identifier" : "371f77bc-8101-45d4-bf14-845db1745101"
+            "structurizr.dsl.identifier" : "36f0a454-5cb7-4357-9108-a26237595456"
           },
-          "sourceId" : "4",
+          "sourceId" : "3",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container",
@@ -90,7 +74,7 @@
       }, {
         "description" : "Business logic for managing products",
         "documentation" : { },
-        "id" : "5",
+        "id" : "4",
         "name" : "ProductService",
         "properties" : {
           "structurizr.dsl.identifier" : "productservice"
@@ -98,9 +82,29 @@
         "relationships" : [ {
           "description" : "Uses",
           "destinationId" : "7",
-          "id" : "15",
+          "id" : "16",
           "properties" : {
-            "structurizr.dsl.identifier" : "109d7a2a-dfd8-4ad6-8351-5ee3f21fc310"
+            "structurizr.dsl.identifier" : "6bdbeb04-3092-4ddd-8932-65070a38c2cf"
+          },
+          "sourceId" : "4",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Spring Service"
+      }, {
+        "description" : "Business logic for managing discounts",
+        "documentation" : { },
+        "id" : "5",
+        "name" : "DiscountService",
+        "properties" : {
+          "structurizr.dsl.identifier" : "discountservice"
+        },
+        "relationships" : [ {
+          "description" : "Uses",
+          "destinationId" : "7",
+          "id" : "17",
+          "properties" : {
+            "structurizr.dsl.identifier" : "6add0f33-69f6-4145-afbe-32479ff1b5b0"
           },
           "sourceId" : "5",
           "tags" : "Relationship"
@@ -118,18 +122,18 @@
         "relationships" : [ {
           "description" : "Fetches product data",
           "destinationId" : "7",
-          "id" : "16",
+          "id" : "18",
           "properties" : {
-            "structurizr.dsl.identifier" : "05870a76-3585-4241-af14-e6c068a1a95c"
+            "structurizr.dsl.identifier" : "a1504127-f6b7-47cf-b0f6-599f62b6e43e"
           },
           "sourceId" : "6",
           "tags" : "Relationship"
         }, {
           "description" : "Delegates price calculation",
           "destinationId" : "10",
-          "id" : "17",
+          "id" : "19",
           "properties" : {
-            "structurizr.dsl.identifier" : "48569cac-3008-4975-851d-c7bc9fa5c8ba"
+            "structurizr.dsl.identifier" : "94bd5c1b-37f8-4285-b385-a3161900001e"
           },
           "sourceId" : "6",
           "tags" : "Relationship"
@@ -144,16 +148,6 @@
         "properties" : {
           "structurizr.dsl.identifier" : "productrepositoryport"
         },
-        "relationships" : [ {
-          "description" : "Implements",
-          "destinationId" : "8",
-          "id" : "18",
-          "properties" : {
-            "structurizr.dsl.identifier" : "f7096a78-410a-4b68-a797-630337c55699"
-          },
-          "sourceId" : "7",
-          "tags" : "Relationship"
-        } ],
         "tags" : "Element,Container",
         "technology" : "Interface"
       }, {
@@ -165,11 +159,20 @@
           "structurizr.dsl.identifier" : "productrepositoryadapter"
         },
         "relationships" : [ {
+          "description" : "Implements",
+          "destinationId" : "7",
+          "id" : "20",
+          "properties" : {
+            "structurizr.dsl.identifier" : "d16f66de-4ac0-40ee-871a-85a37ba27270"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
           "description" : "Uses for data persistence",
           "destinationId" : "9",
-          "id" : "19",
+          "id" : "21",
           "properties" : {
-            "structurizr.dsl.identifier" : "2486ea4e-7f90-439e-b13e-be4fe04467ca"
+            "structurizr.dsl.identifier" : "0e33e5f0-1fc2-4cf3-8f93-6002303fe774"
           },
           "sourceId" : "8",
           "tags" : "Relationship"
@@ -197,142 +200,25 @@
         "tags" : "Element,Container",
         "technology" : "Spring Service"
       } ],
-      "description" : "Manages product listings and price calculations",
+      "description" : "Manages product listings, discounts, and price calculations in a hexagonal architecture",
       "documentation" : { },
-      "id" : "3",
+      "id" : "2",
       "location" : "Unspecified",
-      "name" : "Product Listings System",
+      "name" : "Product System",
       "properties" : {
-        "structurizr.dsl.identifier" : "productlistingssystem"
+        "structurizr.dsl.identifier" : "productsystem"
       },
-      "tags" : "Element,Software System"
-    }, {
-      "containers" : [ {
-        "description" : "Handles HTTP requests for discounts",
-        "documentation" : { },
-        "id" : "21",
-        "name" : "DiscountController",
-        "properties" : {
-          "structurizr.dsl.identifier" : "discountwebapp"
-        },
-        "relationships" : [ {
-          "description" : "Delegates discount operations",
-          "destinationId" : "22",
-          "id" : "28",
-          "properties" : {
-            "structurizr.dsl.identifier" : "cf367576-3cd1-4e06-ad12-06accef62dff"
-          },
-          "sourceId" : "21",
-          "tags" : "Relationship"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "Spring Boot REST Controller"
-      }, {
-        "description" : "Business logic for managing discounts",
-        "documentation" : { },
-        "id" : "22",
-        "name" : "DiscountService",
-        "properties" : {
-          "structurizr.dsl.identifier" : "discountservice"
-        },
-        "relationships" : [ {
-          "description" : "Uses",
-          "destinationId" : "23",
-          "id" : "29",
-          "properties" : {
-            "structurizr.dsl.identifier" : "2fb6c7b4-063b-4b9d-8cba-7939e604cd48"
-          },
-          "sourceId" : "22",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Creates discounts for products",
-          "destinationId" : "3",
-          "id" : "32",
-          "properties" : {
-            "structurizr.dsl.identifier" : "173ac876-63b9-437b-81cf-3a230cd28835"
-          },
-          "sourceId" : "22",
-          "tags" : "Relationship"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "Spring Service"
-      }, {
-        "description" : "Interface for discount persistence",
-        "documentation" : { },
-        "id" : "23",
-        "name" : "DiscountRepository (Port)",
-        "properties" : {
-          "structurizr.dsl.identifier" : "discountrepositoryport"
-        },
-        "relationships" : [ {
-          "description" : "Implements",
-          "destinationId" : "24",
-          "id" : "30",
-          "properties" : {
-            "structurizr.dsl.identifier" : "55f9e92d-1028-4ccd-af2a-47f72bde7217"
-          },
-          "sourceId" : "23",
-          "tags" : "Relationship"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "Interface"
-      }, {
-        "description" : "Implements discount persistence using JPA",
-        "documentation" : { },
-        "id" : "24",
-        "name" : "DiscountRepositoryImpl (Adapter)",
-        "properties" : {
-          "structurizr.dsl.identifier" : "discountrepositoryadapter"
-        },
-        "relationships" : [ {
-          "description" : "Uses for data persistence",
-          "destinationId" : "25",
-          "id" : "31",
-          "properties" : {
-            "structurizr.dsl.identifier" : "2e218868-52e2-4249-9365-ec552c81c3f0"
-          },
-          "sourceId" : "24",
-          "tags" : "Relationship"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "Spring Component"
-      }, {
-        "description" : "Spring JPA repository for DiscountEntity",
-        "documentation" : { },
-        "id" : "25",
-        "name" : "JpaDiscountRepository",
-        "properties" : {
-          "structurizr.dsl.identifier" : "jpadiscountrepository"
-        },
-        "tags" : "Element,Container",
-        "technology" : "Spring Data JPA"
-      } ],
-      "description" : "Manages discount campaigns and creates discounts for products",
-      "documentation" : { },
-      "id" : "20",
-      "location" : "Unspecified",
-      "name" : "Discount Campaigns System",
-      "properties" : {
-        "structurizr.dsl.identifier" : "discountcampaignssystem"
-      },
-      "relationships" : [ {
-        "description" : "Creates discounts for products",
-        "destinationId" : "3",
-        "id" : "33",
-        "linkedRelationshipId" : "32",
-        "sourceId" : "20"
-      } ],
       "tags" : "Element,Software System"
     } ]
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiB0aGUgc2hvcHBpbmcgcGxhdGZvcm0iCiAgICAgICAgYWRtaW4gPSBwZXJzb24gIkFkbWluIiAiQW4gYWRtaW5pc3RyYXRvciBtYW5hZ2luZyBkaXNjb3VudCBjYW1wYWlnbnMiCgogICAgICAgIHByb2R1Y3RMaXN0aW5nc1N5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJQcm9kdWN0IExpc3RpbmdzIFN5c3RlbSIgIk1hbmFnZXMgcHJvZHVjdCBsaXN0aW5ncyBhbmQgcHJpY2UgY2FsY3VsYXRpb25zIiB7CgogICAgICAgICAgICBwcm9kdWN0V2ViYXBwID0gY29udGFpbmVyICJQcm9kdWN0Q29udHJvbGxlciIgIkhhbmRsZXMgSFRUUCByZXF1ZXN0cyBmb3IgcHJvZHVjdHMiICJTcHJpbmcgQm9vdCBSRVNUIENvbnRyb2xsZXIiCgogICAgICAgICAgICBwcm9kdWN0U2VydmljZSA9IGNvbnRhaW5lciAiUHJvZHVjdFNlcnZpY2UiICJCdXNpbmVzcyBsb2dpYyBmb3IgbWFuYWdpbmcgcHJvZHVjdHMiICJTcHJpbmcgU2VydmljZSIKICAgICAgICAgICAgY2FsY3VsYXRlUHJpY2VVc2VDYXNlID0gY29udGFpbmVyICJDYWxjdWxhdGVQcmljZVVzZUNhc2UiICJFeGVjdXRlcyBwcmljZSBjYWxjdWxhdGlvbnMiICJTcHJpbmcgU2VydmljZSIKCiAgICAgICAgICAgIHByb2R1Y3RSZXBvc2l0b3J5UG9ydCA9IGNvbnRhaW5lciAiUHJvZHVjdFJlcG9zaXRvcnkgKFBvcnQpIiAiSW50ZXJmYWNlIGZvciBwcm9kdWN0IHBlcnNpc3RlbmNlIiAiSW50ZXJmYWNlIgoKICAgICAgICAgICAgcHJvZHVjdFJlcG9zaXRvcnlBZGFwdGVyID0gY29udGFpbmVyICJQcm9kdWN0UmVwb3NpdG9yeUltcGwgKEFkYXB0ZXIpIiAiSW1wbGVtZW50cyBwcm9kdWN0IHBlcnNpc3RlbmNlIHVzaW5nIEpQQSIgIlNwcmluZyBDb21wb25lbnQiCgogICAgICAgICAgICBqcGFQcm9kdWN0UmVwb3NpdG9yeSA9IGNvbnRhaW5lciAiSnBhUHJvZHVjdFJlcG9zaXRvcnkiICJTcHJpbmcgSlBBIHJlcG9zaXRvcnkgZm9yIFByb2R1Y3RFbnRpdHkiICJTcHJpbmcgRGF0YSBKUEEiCgogICAgICAgICAgICBwcmljaW5nU2VydmljZSA9IGNvbnRhaW5lciAiUHJpY2luZ1NlcnZpY2UiICJDYWxjdWxhdGVzIHByaWNpbmcgZm9yIHByb2R1Y3RzIiAiU3ByaW5nIFNlcnZpY2UiCgogICAgICAgICAgICB1c2VyIC0+IHByb2R1Y3RXZWJhcHAgIlVzZXMiCgogICAgICAgICAgICBwcm9kdWN0V2ViYXBwIC0+IHByb2R1Y3RTZXJ2aWNlICJEZWxlZ2F0ZXMgcHJvZHVjdCBvcGVyYXRpb25zIgogICAgICAgICAgICBwcm9kdWN0V2ViYXBwIC0+IGNhbGN1bGF0ZVByaWNlVXNlQ2FzZSAiRGVsZWdhdGVzIHByaWNlIGNhbGN1bGF0aW9uIHJlcXVlc3RzIgoKICAgICAgICAgICAgcHJvZHVjdFNlcnZpY2UgLT4gcHJvZHVjdFJlcG9zaXRvcnlQb3J0ICJVc2VzIgogICAgICAgICAgICBjYWxjdWxhdGVQcmljZVVzZUNhc2UgLT4gcHJvZHVjdFJlcG9zaXRvcnlQb3J0ICJGZXRjaGVzIHByb2R1Y3QgZGF0YSIKICAgICAgICAgICAgY2FsY3VsYXRlUHJpY2VVc2VDYXNlIC0+IHByaWNpbmdTZXJ2aWNlICJEZWxlZ2F0ZXMgcHJpY2UgY2FsY3VsYXRpb24iCgogICAgICAgICAgICBwcm9kdWN0UmVwb3NpdG9yeVBvcnQgLT4gcHJvZHVjdFJlcG9zaXRvcnlBZGFwdGVyICJJbXBsZW1lbnRzIgogICAgICAgICAgICBwcm9kdWN0UmVwb3NpdG9yeUFkYXB0ZXIgLT4ganBhUHJvZHVjdFJlcG9zaXRvcnkgIlVzZXMgZm9yIGRhdGEgcGVyc2lzdGVuY2UiCiAgICAgICAgfQoKICAgICAgICBkaXNjb3VudENhbXBhaWduc1N5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJEaXNjb3VudCBDYW1wYWlnbnMgU3lzdGVtIiAiTWFuYWdlcyBkaXNjb3VudCBjYW1wYWlnbnMgYW5kIGNyZWF0ZXMgZGlzY291bnRzIGZvciBwcm9kdWN0cyIgewoKICAgICAgICAgICAgZGlzY291bnRXZWJhcHAgPSBjb250YWluZXIgIkRpc2NvdW50Q29udHJvbGxlciIgIkhhbmRsZXMgSFRUUCByZXF1ZXN0cyBmb3IgZGlzY291bnRzIiAiU3ByaW5nIEJvb3QgUkVTVCBDb250cm9sbGVyIgogICAgICAgICAgICBkaXNjb3VudFNlcnZpY2UgPSBjb250YWluZXIgIkRpc2NvdW50U2VydmljZSIgIkJ1c2luZXNzIGxvZ2ljIGZvciBtYW5hZ2luZyBkaXNjb3VudHMiICJTcHJpbmcgU2VydmljZSIKICAgICAgICAgICAgZGlzY291bnRSZXBvc2l0b3J5UG9ydCA9IGNvbnRhaW5lciAiRGlzY291bnRSZXBvc2l0b3J5IChQb3J0KSIgIkludGVyZmFjZSBmb3IgZGlzY291bnQgcGVyc2lzdGVuY2UiICJJbnRlcmZhY2UiCiAgICAgICAgICAgIGRpc2NvdW50UmVwb3NpdG9yeUFkYXB0ZXIgPSBjb250YWluZXIgIkRpc2NvdW50UmVwb3NpdG9yeUltcGwgKEFkYXB0ZXIpIiAiSW1wbGVtZW50cyBkaXNjb3VudCBwZXJzaXN0ZW5jZSB1c2luZyBKUEEiICJTcHJpbmcgQ29tcG9uZW50IgogICAgICAgICAgICBqcGFEaXNjb3VudFJlcG9zaXRvcnkgPSBjb250YWluZXIgIkpwYURpc2NvdW50UmVwb3NpdG9yeSIgIlNwcmluZyBKUEEgcmVwb3NpdG9yeSBmb3IgRGlzY291bnRFbnRpdHkiICJTcHJpbmcgRGF0YSBKUEEiCgogICAgICAgICAgICBhZG1pbiAtPiBkaXNjb3VudFdlYmFwcCAiTWFuYWdlcyBkaXNjb3VudHMiCgogICAgICAgICAgICBkaXNjb3VudFdlYmFwcCAtPiBkaXNjb3VudFNlcnZpY2UgIkRlbGVnYXRlcyBkaXNjb3VudCBvcGVyYXRpb25zIgogICAgICAgICAgICBkaXNjb3VudFNlcnZpY2UgLT4gZGlzY291bnRSZXBvc2l0b3J5UG9ydCAiVXNlcyIKICAgICAgICAgICAgZGlzY291bnRSZXBvc2l0b3J5UG9ydCAtPiBkaXNjb3VudFJlcG9zaXRvcnlBZGFwdGVyICJJbXBsZW1lbnRzIgogICAgICAgICAgICBkaXNjb3VudFJlcG9zaXRvcnlBZGFwdGVyIC0+IGpwYURpc2NvdW50UmVwb3NpdG9yeSAiVXNlcyBmb3IgZGF0YSBwZXJzaXN0ZW5jZSIKCiAgICAgICAgICAgIC8vIERpc2NvdW50IENhbXBhaWducyBTeXN0ZW0gY3JlYXRlcyBkaXNjb3VudHMgZm9yIHByb2R1Y3RzCiAgICAgICAgICAgIGRpc2NvdW50U2VydmljZSAtPiBwcm9kdWN0TGlzdGluZ3NTeXN0ZW0gIkNyZWF0ZXMgZGlzY291bnRzIGZvciBwcm9kdWN0cyIKICAgICAgICB9CgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICAvLyBTeXN0ZW0gY29udGV4dCB2aWV3IGZvciBQcm9kdWN0IExpc3RpbmdzIFN5c3RlbSwgYnV0IGluY2x1ZGluZyBib3RoIHVzZXJzIGFuZCBzeXN0ZW1zCiAgICAgICAgc3lzdGVtQ29udGV4dCBwcm9kdWN0TGlzdGluZ3NTeXN0ZW0gewogICAgICAgICAgICBpbmNsdWRlIHVzZXIKICAgICAgICAgICAgaW5jbHVkZSBhZG1pbgogICAgICAgICAgICBpbmNsdWRlIHByb2R1Y3RMaXN0aW5nc1N5c3RlbQogICAgICAgICAgICBpbmNsdWRlIGRpc2NvdW50Q2FtcGFpZ25zU3lzdGVtCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBwcm9kdWN0TGlzdGluZ3NTeXN0ZW0gewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b2xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIGRpc2NvdW50Q2FtcGFpZ25zU3lzdGVtIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CgogICAgICAgIHRoZW1lIGRlZmF1bHQKCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiQ29udGFpbmVyIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMTE2OGJkIgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMDg0MjdiIgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgc2hhcGUgY3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQo="
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiB0aGUgc2hvcHBpbmcgcGxhdGZvcm0iCgogICAgICAgIHByb2R1Y3RTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiUHJvZHVjdCBTeXN0ZW0iICJNYW5hZ2VzIHByb2R1Y3QgbGlzdGluZ3MsIGRpc2NvdW50cywgYW5kIHByaWNlIGNhbGN1bGF0aW9ucyBpbiBhIGhleGFnb25hbCBhcmNoaXRlY3R1cmUiIHsKCiAgICAgICAgICAgIHByb2R1Y3RXZWJhcHAgPSBjb250YWluZXIgIlByb2R1Y3RDb250cm9sbGVyIiAiSGFuZGxlcyBIVFRQIHJlcXVlc3RzIGZvciBwcm9kdWN0cyBhbmQgZGlzY291bnRzIiAiU3ByaW5nIEJvb3QgUkVTVCBDb250cm9sbGVyIgoKICAgICAgICAgICAgcHJvZHVjdFNlcnZpY2UgPSBjb250YWluZXIgIlByb2R1Y3RTZXJ2aWNlIiAiQnVzaW5lc3MgbG9naWMgZm9yIG1hbmFnaW5nIHByb2R1Y3RzIiAiU3ByaW5nIFNlcnZpY2UiCiAgICAgICAgICAgIGRpc2NvdW50U2VydmljZSA9IGNvbnRhaW5lciAiRGlzY291bnRTZXJ2aWNlIiAiQnVzaW5lc3MgbG9naWMgZm9yIG1hbmFnaW5nIGRpc2NvdW50cyIgIlNwcmluZyBTZXJ2aWNlIgogICAgICAgICAgICBjYWxjdWxhdGVQcmljZVVzZUNhc2UgPSBjb250YWluZXIgIkNhbGN1bGF0ZVByaWNlVXNlQ2FzZSIgIkV4ZWN1dGVzIHByaWNlIGNhbGN1bGF0aW9ucyIgIlNwcmluZyBTZXJ2aWNlIgoKICAgICAgICAgICAgcHJvZHVjdFJlcG9zaXRvcnlQb3J0ID0gY29udGFpbmVyICJQcm9kdWN0UmVwb3NpdG9yeSAoUG9ydCkiICJJbnRlcmZhY2UgZm9yIHByb2R1Y3QgcGVyc2lzdGVuY2UiICJJbnRlcmZhY2UiCgogICAgICAgICAgICBwcm9kdWN0UmVwb3NpdG9yeUFkYXB0ZXIgPSBjb250YWluZXIgIlByb2R1Y3RSZXBvc2l0b3J5SW1wbCAoQWRhcHRlcikiICJJbXBsZW1lbnRzIHByb2R1Y3QgcGVyc2lzdGVuY2UgdXNpbmcgSlBBIiAiU3ByaW5nIENvbXBvbmVudCIKCiAgICAgICAgICAgIGpwYVByb2R1Y3RSZXBvc2l0b3J5ID0gY29udGFpbmVyICJKcGFQcm9kdWN0UmVwb3NpdG9yeSIgIlNwcmluZyBKUEEgcmVwb3NpdG9yeSBmb3IgUHJvZHVjdEVudGl0eSIgIlNwcmluZyBEYXRhIEpQQSIKCiAgICAgICAgICAgIHByaWNpbmdTZXJ2aWNlID0gY29udGFpbmVyICJQcmljaW5nU2VydmljZSIgIkNhbGN1bGF0ZXMgcHJpY2luZyBmb3IgcHJvZHVjdHMiICJTcHJpbmcgU2VydmljZSIKCiAgICAgICAgICAgIHVzZXIgLT4gcHJvZHVjdFdlYmFwcCAiVXNlcyIKCiAgICAgICAgICAgIHByb2R1Y3RXZWJhcHAgLT4gcHJvZHVjdFNlcnZpY2UgIkRlbGVnYXRlcyBwcm9kdWN0IG9wZXJhdGlvbnMiCiAgICAgICAgICAgIHByb2R1Y3RXZWJhcHAgLT4gZGlzY291bnRTZXJ2aWNlICJEZWxlZ2F0ZXMgZGlzY291bnQgb3BlcmF0aW9ucyIKICAgICAgICAgICAgcHJvZHVjdFdlYmFwcCAtPiBjYWxjdWxhdGVQcmljZVVzZUNhc2UgIkRlbGVnYXRlcyBwcmljZSBjYWxjdWxhdGlvbiByZXF1ZXN0cyIKCiAgICAgICAgICAgIHByb2R1Y3RTZXJ2aWNlIC0+IHByb2R1Y3RSZXBvc2l0b3J5UG9ydCAiVXNlcyIKICAgICAgICAgICAgZGlzY291bnRTZXJ2aWNlIC0+IHByb2R1Y3RSZXBvc2l0b3J5UG9ydCAiVXNlcyIKICAgICAgICAgICAgY2FsY3VsYXRlUHJpY2VVc2VDYXNlIC0+IHByb2R1Y3RSZXBvc2l0b3J5UG9ydCAiRmV0Y2hlcyBwcm9kdWN0IGRhdGEiCiAgICAgICAgICAgIGNhbGN1bGF0ZVByaWNlVXNlQ2FzZSAtPiBwcmljaW5nU2VydmljZSAiRGVsZWdhdGVzIHByaWNlIGNhbGN1bGF0aW9uIgoKICAgICAgICAgICAgcHJvZHVjdFJlcG9zaXRvcnlBZGFwdGVyIC0+IHByb2R1Y3RSZXBvc2l0b3J5UG9ydCAiSW1wbGVtZW50cyIKICAgICAgICAgICAgcHJvZHVjdFJlcG9zaXRvcnlBZGFwdGVyIC0+IGpwYVByb2R1Y3RSZXBvc2l0b3J5ICJVc2VzIGZvciBkYXRhIHBlcnNpc3RlbmNlIgogICAgICAgIH0KICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBwcm9kdWN0U3lzdGVtIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBwcm9kdWN0U3lzdGVtIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CgogICAgICAgIHRoZW1lIGRlZmF1bHQKCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiQ29udGFpbmVyIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMTE2OGJkIgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMDg0MjdiIgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgc2hhcGUgY3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQo="
   },
   "views" : {
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "SystemContext-001",
+      "lastSavedView" : "Container-001",
       "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
@@ -354,7 +240,7 @@
     },
     "containerViews" : [ {
       "automaticLayout" : {
-        "applied" : false,
+        "applied" : true,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -362,38 +248,46 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
+      "dimensions" : {
+        "height" : 2611,
+        "width" : 3070
+      },
       "elements" : [ {
         "id" : "1",
-        "x" : 0,
-        "y" : 0
+        "x" : 200,
+        "y" : 1369
+      }, {
+        "id" : "3",
+        "x" : 900,
+        "y" : 1419
       }, {
         "id" : "4",
-        "x" : 0,
-        "y" : 0
+        "x" : 1650,
+        "y" : 819
       }, {
         "id" : "5",
-        "x" : 0,
-        "y" : 0
+        "x" : 1650,
+        "y" : 1419
       }, {
         "id" : "6",
-        "x" : 0,
-        "y" : 0
+        "x" : 1650,
+        "y" : 2019
       }, {
         "id" : "7",
-        "x" : 0,
-        "y" : 0
+        "x" : 2400,
+        "y" : 1119
       }, {
         "id" : "8",
-        "x" : 0,
-        "y" : 0
+        "x" : 1650,
+        "y" : 219
       }, {
         "id" : "9",
-        "x" : 0,
-        "y" : 0
+        "x" : 2400,
+        "y" : 219
       }, {
         "id" : "10",
-        "x" : 0,
-        "y" : 0
+        "x" : 2400,
+        "y" : 2019
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "generatedKey" : true,
@@ -415,65 +309,12 @@
         "id" : "18"
       }, {
         "id" : "19"
+      }, {
+        "id" : "20"
+      }, {
+        "id" : "21"
       } ],
-      "softwareSystemId" : "3"
-    }, {
-      "automaticLayout" : {
-        "applied" : false,
-        "edgeSeparation" : 0,
-        "implementation" : "Graphviz",
-        "nodeSeparation" : 300,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 300,
-        "vertices" : false
-      },
-      "elements" : [ {
-        "id" : "2",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "3",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "21",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "22",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "23",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "24",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "25",
-        "x" : 0,
-        "y" : 0
-      } ],
-      "externalSoftwareSystemBoundariesVisible" : false,
-      "generatedKey" : true,
-      "key" : "Container-002",
-      "order" : 3,
-      "relationships" : [ {
-        "id" : "26"
-      }, {
-        "id" : "28"
-      }, {
-        "id" : "29"
-      }, {
-        "id" : "30"
-      }, {
-        "id" : "31"
-      }, {
-        "id" : "32"
-      } ],
-      "softwareSystemId" : "20"
+      "softwareSystemId" : "2"
     } ],
     "systemContextViews" : [ {
       "automaticLayout" : {
@@ -486,25 +327,17 @@
         "vertices" : false
       },
       "dimensions" : {
-        "height" : 1450,
-        "width" : 2300
+        "height" : 800,
+        "width" : 1550
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 924,
-        "y" : 200
+        "x" : 199,
+        "y" : 199
       }, {
         "id" : "2",
-        "x" : 199,
-        "y" : 850
-      }, {
-        "id" : "3",
-        "x" : 1649,
-        "y" : 575
-      }, {
-        "id" : "20",
         "x" : 899,
-        "y" : 900
+        "y" : 249
       } ],
       "enterpriseBoundaryVisible" : true,
       "generatedKey" : true,
@@ -512,12 +345,8 @@
       "order" : 1,
       "relationships" : [ {
         "id" : "12"
-      }, {
-        "id" : "27"
-      }, {
-        "id" : "33"
       } ],
-      "softwareSystemId" : "3"
+      "softwareSystemId" : "2"
     } ]
   }
 }
