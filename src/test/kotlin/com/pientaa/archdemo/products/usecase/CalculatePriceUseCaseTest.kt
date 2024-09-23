@@ -72,14 +72,12 @@ class CalculatePriceUseCaseTest : BehaviorSpec({
         When("Calculate price") {
             val response = calculatePriceUseCase.execute(query)
 
-
             Then("Total price should respect discounts") {
                 response.totalPrice shouldBeEqualComparingTo BigDecimal(215)
             }
 
             Then("3 products should be returned") {
                 response.products.size shouldBe 3
-
             }
 
             Then("First product's price and quantity should be correct") {

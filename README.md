@@ -10,6 +10,8 @@ requirements and technical considerations. The steps below will guide you throug
 system to a more flexible, maintainable architecture:
 
 1. **Step 1**: Product Listings
+2. **Step 2**: Discounts
+3. **Step 3**: Discounts Campaign
 
 ---
 
@@ -34,6 +36,8 @@ system to a more flexible, maintainable architecture:
     - **Acceptance Criteria**:
         - The user makes a request to retrieve all products.
         - The system returns a list of all products with their name, price, and ID.
+
+---
 
 ## Step 2: Apply Discounts to Products Based on Specific Rules
 
@@ -64,3 +68,32 @@ system to a more flexible, maintainable architecture:
         - The system checks the quantity of the product and applies a percentage discount if the purchase
           meets the threshold.
         - The percentage discount is stored along with the original price.
+
+---
+
+## Step 3: Discount Campaigns
+
+### Business Requirement 3: Plan and Schedule Discount Campaigns
+
+- **Description**: The system should support the creation and scheduling of discount campaigns that apply specific discounts to products for a defined period. Each campaign can apply multiple discount rules and should be active only during its scheduled time frame.
+
+### Functional Requirements
+
+1. **Create Discount Campaign**:
+    - **Description**: The user can create a new discount campaign by specifying the start and end dates, the discount type, and the applicable products.
+    - **Acceptance Criteria**:
+        - The user provides the campaign name, start date, end date, discount type(s), and target products.
+        - The system schedules the campaign based on the provided dates.
+        - The discount rules are applied only during the active campaign period.
+        - The system should prevent overlapping discount campaigns for the same products unless specified.
+
+2. **View Active Campaigns**:
+    - **Description**: The user can retrieve a list of all active discount campaigns at any given time.
+    - **Acceptance Criteria**:
+        - The system returns a list of currently active campaigns with their details, such as start date, end date, discount types, and affected products.
+
+3. **Deactivate Expired Campaigns**:
+    - **Description**: The system should automatically deactivate campaigns once their end date has passed.
+    - **Acceptance Criteria**:
+        - The system automatically checks the campaign end date and deactivates the campaign after it expires.
+        - Expired campaigns should no longer apply discounts to products.
