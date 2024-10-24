@@ -78,7 +78,7 @@ class ProductControllerTest(
         val discountRequests = mapOf(
             products.keys.elementAt(0) to CreateDiscountDTO(
                 type = DiscountType.BUY_N_FOR_PRICE_OF_ONE,
-                n = 3
+                n = 2
             ),
             products.keys.elementAt(1) to CreateDiscountDTO(
                 type = DiscountType.COUNT_BASED_PERCENTAGE,
@@ -126,7 +126,7 @@ class ProductControllerTest(
         // Prepare the request payload
         val calculatePriceRequest = CalculatePriceQuery(
             products = listOf(
-                CalculatePriceQuery.ProductQuantityDTO(productId = products.keys.elementAt(0), quantity = 3),
+                CalculatePriceQuery.ProductQuantityDTO(productId = products.keys.elementAt(0), quantity = 4),
                 CalculatePriceQuery.ProductQuantityDTO(productId = products.keys.elementAt(1), quantity = 5),
             )
         )
@@ -144,11 +144,11 @@ class ProductControllerTest(
         val response = objectMapper.readValue<CalculatePriceResponseDTO>(result.response.contentAsString)
 
         assertSoftly {
-            response.totalPrice shouldBeEqualComparingTo BigDecimal("155.00")
+            response.totalPrice shouldBeEqualComparingTo BigDecimal("175.00")
             response.products.size shouldBe 2
             response.products.forOne {
-                it.initialTotalPrice shouldBeEqualComparingTo BigDecimal("60.00")
-                it.discountedTotalPrice shouldBeEqualComparingTo BigDecimal("20.00")
+                it.initialTotalPrice shouldBeEqualComparingTo BigDecimal("80.00")
+                it.discountedTotalPrice shouldBeEqualComparingTo BigDecimal("40.00")
             }
             response.products.forOne {
                 it.initialTotalPrice shouldBeEqualComparingTo BigDecimal("150.00")
